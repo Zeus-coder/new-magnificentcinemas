@@ -28,7 +28,7 @@ export default function ComingSoonCard({ film, index }: ComingSoonCardProps) {
       </div>
 
       <div className="mt-3 flex items-baseline gap-2.5">
-        <span className="tabular text-[11px] text-gold-deep">
+        <span className="tabular text-[11px] text-gold-muted">
           {String(index + 1).padStart(2, '0')}
         </span>
         <div>

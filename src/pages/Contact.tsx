@@ -46,7 +46,7 @@ export default function Contact() {
     [
       'w-full border bg-surface px-4 py-3 text-sm text-ink transition-colors duration-200',
       'placeholder:text-ink-dim focus:border-gold focus:outline-none',
-      hasError ? 'border-[#c4644a]' : 'border-line-bright',
+      hasError ? 'border-[#c4644a]' : 'border-line-control',
     ].join(' ')
 
   return (

@@ -15,15 +15,21 @@
   --color-raised: #1c1816;
   --color-line: #2b2522;
   --color-line-bright: #3d3531;
+  /* Borders on interactive controls — 3.32:1 on screen, clearing WCAG 1.4.11 */
+  --color-line-control: #6b625a;
 
-  /* Text — warm off-whites in the same family */
+  /* Text — warm off-whites in the same family.
+     ink-dim is 5.12:1 on screen: it carries 11px eyebrows, so it has to
+     clear 4.5:1 rather than the 3:1 that large text would allow. */
   --color-ink: #f5efe6;
   --color-ink-muted: #a89f94;
-  --color-ink-dim: #756b62;
+  --color-ink-dim: #8a8077;
 
-  /* The one accent */
+  /* The one accent. gold-deep is decorative only (underlines, fills) —
+     gold-muted is the smallest tone safe for text at 6.05:1. */
   --color-gold: #d9a441;
   --color-gold-bright: #ecc274;
+  --color-gold-muted: #b08838;
   --color-gold-deep: #7d5a1e;
 
   /* Type */
@@ -177,6 +183,12 @@
 
   .marquee-track {
     animation: marquee 48s linear infinite;
+  }
+
+  /* Give the ticker a way to stop for anyone trying to read it */
+  .marquee-track:hover,
+  .marquee-track:focus-within {
+    animation-play-state: paused;
   }
 }
 

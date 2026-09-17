@@ -49,7 +49,7 @@ export default function Movies() {
                   'group inline-flex items-baseline gap-2 border px-4 py-2 text-sm transition-all duration-200 ease-out-soft active:translate-y-px',
                   isActive
                     ? 'border-gold bg-gold text-[#120d04]'
-                    : 'border-line-bright text-ink-muted hover:border-gold hover:text-ink',
+                    : 'border-line-control text-ink-muted hover:border-gold hover:text-ink',
                 ].join(' ')}
                 style={{ borderRadius: 'var(--radius-tight)' }}
               >
@@ -86,7 +86,7 @@ export default function Movies() {
             <button
               type="button"
               onClick={() => setFilter('All')}
-              className="mt-7 border border-line-bright px-5 py-2.5 text-sm transition-colors duration-200 hover:border-gold hover:text-gold"
+              className="mt-7 border border-line-control px-5 py-2.5 text-sm transition-colors duration-200 hover:border-gold hover:text-gold"
               style={{ borderRadius: 'var(--radius-tight)' }}
             >
               Show all films

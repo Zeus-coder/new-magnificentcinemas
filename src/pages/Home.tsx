@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 
 import ComingSoonCard from '../components/ComingSoonCard'
-import HeroCarousel from '../components/HeroCarousel'
 import Marquee from '../components/Marquee'
 import MovieCard from '../components/MovieCard'
+import PosterWall from '../components/PosterWall'
 import { comingSoon } from '../data/comingSoon'
 import { movies } from '../data/movies'
 import { formatNaira, site, ticketTiers } from '../data/site'
@@ -29,9 +29,9 @@ export default function Home() {
           stats pinned to the floor of the frame.
           --------------------------------------------------------------- */}
       <section className="relative flex min-h-[100dvh] flex-col justify-end overflow-hidden">
-        <HeroCarousel />
+        <PosterWall />
 
-        <div className="shell relative w-full pb-44 pt-36 md:pb-48">
+        <div className="shell relative w-full pb-28 pt-32 md:pb-32 md:pt-36">
           <p className="eyebrow text-gold">Onipanu, Somolu · Lagos</p>
 
           <h1
@@ -47,10 +47,11 @@ export default function Home() {
             <span className="text-gold">on the</span> big screen.
           </h1>
 
-          <p className="mt-8 max-w-[44ch] text-base leading-relaxed text-ink-muted md:text-lg">
-            {movies.length} films showing today, from the first 10:00AM screening to the last one
-            at 9:00PM. Tickets from <span className="text-ink">{formatNaira(cheapest)}</span>,
-            popcorn and a drink included.
+          <p className="mt-8 max-w-[46ch] text-base leading-relaxed text-ink-muted md:text-lg">
+            {movies.length} films showing today — Igbo and Yoruba epics, family drama, and the
+            Hollywood releases — from the first 10:00AM screening to the last at 9:00PM. Tickets
+            from <span className="text-ink">{formatNaira(cheapest)}</span>, popcorn and a drink
+            included.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">
@@ -78,9 +79,12 @@ export default function Home() {
               { label: 'Now showing', value: movies.length },
               { label: 'Coming soon', value: comingSoon.length },
             ].map((stat, index) => (
-              <div key={stat.label} className={index === 0 ? 'py-5 pr-6' : 'py-5 pl-6 pr-6'}>
-                <dt className="eyebrow">{stat.label}</dt>
-                <dd className="tabular mt-1.5 text-2xl text-ink md:text-3xl">{stat.value}</dd>
+              <div
+                key={stat.label}
+                className={index === 0 ? 'py-4 pr-3 md:py-5 md:pr-6' : 'px-3 py-4 md:px-6 md:py-5'}
+              >
+                <dt className="eyebrow text-[10px] md:text-[11px]">{stat.label}</dt>
+                <dd className="tabular mt-1.5 text-xl text-ink md:text-3xl">{stat.value}</dd>
               </div>
             ))}
           </dl>
@@ -119,8 +123,9 @@ export default function Home() {
           </div>
 
           <article className="reveal group mt-10 grid gap-8 md:grid-cols-12 md:gap-12">
+            {/* Capped on phones so a 2:3 poster does not run to ~600px tall */}
             <div
-              className="relative overflow-hidden bg-raised md:col-span-5 lg:col-span-4"
+              className="relative w-full max-w-[16rem] overflow-hidden bg-raised sm:max-w-[20rem] md:col-span-5 md:max-w-none lg:col-span-4"
               style={{ borderRadius: 'var(--radius-panel)', boxShadow: 'var(--shadow-lift)' }}
             >
               <img
@@ -291,7 +296,7 @@ export default function Home() {
                 </p>
                 <Link
                   to="/services"
-                  className="mt-7 inline-flex items-center gap-2 border border-line-bright px-6 py-3 text-sm text-ink transition-colors duration-200 hover:border-gold hover:text-gold"
+                  className="mt-7 inline-flex items-center gap-2 border border-line-control px-6 py-3 text-sm text-ink transition-colors duration-200 hover:border-gold hover:text-gold"
                   style={{ borderRadius: 'var(--radius-tight)' }}
                 >
                   What we offer

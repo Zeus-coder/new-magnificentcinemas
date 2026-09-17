@@ -81,7 +81,7 @@ export default function About() {
             </Link>
             <Link
               to="/contact"
-              className="border border-line-bright px-6 py-3 text-sm transition-colors duration-200 hover:border-gold hover:text-gold"
+              className="border border-line-control px-6 py-3 text-sm transition-colors duration-200 hover:border-gold hover:text-gold"
               style={{ borderRadius: 'var(--radius-tight)' }}
             >
               Visit us

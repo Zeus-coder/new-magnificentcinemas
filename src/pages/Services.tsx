@@ -54,7 +54,7 @@ export default function Services() {
               </div>
 
               <div className={['md:col-span-6', flipped ? 'md:order-1 md:col-start-1' : ''].join(' ')}>
-                <p className="tabular text-xs text-gold-deep">
+                <p className="tabular text-xs text-gold-muted">
                   {String(index + 1).padStart(2, '0')}
                 </p>
                 <h2
